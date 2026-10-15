@@ -10,5 +10,19 @@
     "level.tsimshatsui.name": "尖沙咀鐘樓",
     "level.central.name": "中環叮叮",
     "level.peak.name": "山頂纜車",
-    "level.lantau.name": "青馬大橋・大佛"
+    "level.lantau.name": "青馬大橋・大佛",
+    "character.officeWorker.name": "打工仔",
+    "character.officeLady.name": "OL",
+    "character.student.name": "小學雞",
+    "character.comingSoon": "整緊，等陣先",
+    "weapon.briefcase": "公事包",
+    "weapon.folder": "文件夾",
+    "weapon.handbag": "手袋",
+    "weapon.selfieStick": "自拍神器",
+    "weapon.schoolbag": "書包",
+    "weapon.tutorialNotes": "補習筆記",
+    "skill.formSwitch": "轉車",
+    "skill.stockTrading": "炒股",
+    "skill.kolLivestream": "開 live",
+    "skill.tutorialBoost": "開竅"
 }

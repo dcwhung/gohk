@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { CHARACTERS, DEFAULT_CHARACTER_ID, getCharacterById } from '@/config/characters';
+import {
+    CHARACTERS,
+    DEFAULT_CHARACTER_ID,
+    getCharacterById,
+    getPlayableCharacters,
+} from '@/config/characters';
 import { LEVELS, getLevelById, getNextLevel } from '@/config/levels';
 import zhHK from '@/i18n/zh-HK.json';
 
@@ -59,5 +64,16 @@ describe('levels config', () => {
     it('returns undefined when there is no next level', () => {
         expect(getNextLevel('unknown')).toBeUndefined();
         expect(getLevelById('unknown')).toBeUndefined();
+    });
+});
+
+describe('character roster', () => {
+    it('has exactly one playable character in v1', () => {
+        expect(getPlayableCharacters().map((character) => character.id)).toEqual(['delivery-boy']);
+    });
+
+    it('gives every character a distinct skill', () => {
+        const skills = CHARACTERS.map((character) => character.skillId);
+        expect(new Set(skills).size).toBe(skills.length);
     });
 });
