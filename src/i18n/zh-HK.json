@@ -9,10 +9,7 @@
     "level.mongkok.name": "旺角街市",
     "level.tsimshatsui.name": "尖沙咀鐘樓",
     "level.central.name": "中環叮叮",
-    "level.peak.name": "山頂纜車",
-    "level.lantau.name": "青馬大橋・大佛",
     "character.officeWorker.name": "打工仔",
-    "character.officeLady.name": "OL",
     "character.student.name": "小學雞",
     "character.comingSoon": "整緊，等陣先",
     "weapon.briefcase": "公事包",
@@ -28,5 +25,7 @@
     "character.elderly.name": "老人家",
     "weapon.walkingStick": "拐杖",
     "weapon.thermosFlask": "保溫壺",
-    "skill.elderlyPriority": "長者優先"
+    "skill.elderlyPriority": "長者優先",
+    "level.peakLionRock.name": "山頂・獅子山",
+    "level.wongTaiSinChoiHung.name": "黃大仙・彩虹邨"
 }

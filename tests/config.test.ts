@@ -72,8 +72,29 @@ describe('character roster', () => {
         expect(getPlayableCharacters().map((character) => character.id)).toEqual(['delivery-boy']);
     });
 
-    it('gives every character a distinct skill', () => {
-        const skills = CHARACTERS.map((character) => character.skillId);
+    it('gives every character at least one skill, none shared across characters', () => {
+        const skills = CHARACTERS.flatMap((character) => character.skillIds);
+        expect(skills.length).toBeGreaterThanOrEqual(CHARACTERS.length);
         expect(new Set(skills).size).toBe(skills.length);
+    });
+
+    it('gives every character at least one skin', () => {
+        for (const character of CHARACTERS) {
+            expect(character.skins.length, character.id).toBeGreaterThan(0);
+        }
+    });
+
+    it('points every level story owner at a real character', () => {
+        for (const level of LEVELS) {
+            if (level.storyOwnerId) {
+                expect(getCharacterById(level.storyOwnerId), level.id).toBeDefined();
+            }
+        }
+    });
+
+    it('gives every non-delivery character exactly one owned level', () => {
+        const owners = LEVELS.map((level) => level.storyOwnerId).filter(Boolean);
+        expect(new Set(owners).size).toBe(owners.length);
+        expect(owners.length).toBe(CHARACTERS.length);
     });
 });

@@ -1,6 +1,7 @@
 /**
  * 可選角色 config。新增角色 = 加一個 entry + 美術，唔使改 code。
- * 第一版只完成「外賣仔」；打工仔 / OL / 學生 / 老人家 已預留 config，美術同技能實作之後做。
+ * 四個主角係一家人：外賣仔 / 打工仔（男女 skin）/ 學生 / 老人家。
+ * 第一版只完成「外賣仔」；其餘已預留 config，美術同技能實作之後做。
  */
 
 export type MovementForm =
@@ -22,12 +23,14 @@ export interface CharacterConfig {
     id: string;
     /** i18n key，顯示名由 zh-HK.json 提供。 */
     nameKey: string;
+    /** 外觀 skin 清單（例如男 / 女），數值同技能一樣，只換美術。 */
+    skins: readonly string[];
     forms: readonly MovementForm[];
     meleeWeaponKey: string;
     throwWeaponKey: string;
-    skillId: SkillId;
+    skillIds: readonly SkillId[];
     stats: CharacterStats;
-    /** 第一版是否可揀；false 嘅角色喺選角畫面顯示「Coming soon」。 */
+    /** 第一版是否可揀；false 嘅角色喺選角畫面顯示「整緊」。 */
     playable: boolean;
 }
 
@@ -48,54 +51,50 @@ const ELDERLY_STATS: CharacterStats = {
     throwDamage: 12,
 };
 
+const SINGLE_SKIN = ['default'] as const;
+
 export const CHARACTERS: readonly CharacterConfig[] = [
     {
         id: 'delivery-boy',
         nameKey: 'character.deliveryBoy.name',
+        skins: SINGLE_SKIN,
         forms: ['walk', 'bicycle', 'motorbike'],
         meleeWeaponKey: 'weapon.foodTray',
         throwWeaponKey: 'weapon.pineappleBun',
-        skillId: 'form-switch',
+        skillIds: ['form-switch'],
         stats: BASE_STATS,
         playable: true,
     },
     {
         id: 'office-worker',
         nameKey: 'character.officeWorker.name',
+        skins: ['male', 'female'],
         forms: ['walk', 'transit'],
         meleeWeaponKey: 'weapon.briefcase',
         throwWeaponKey: 'weapon.folder',
-        skillId: 'stock-trading',
-        stats: BASE_STATS,
-        playable: false,
-    },
-    {
-        id: 'office-lady',
-        nameKey: 'character.officeLady.name',
-        forms: ['walk', 'transit'],
-        meleeWeaponKey: 'weapon.handbag',
-        throwWeaponKey: 'weapon.selfieStick',
-        skillId: 'kol-livestream',
+        skillIds: ['stock-trading', 'kol-livestream'],
         stats: BASE_STATS,
         playable: false,
     },
     {
         id: 'student',
         nameKey: 'character.student.name',
+        skins: SINGLE_SKIN,
         forms: ['walk', 'schoolbus'],
         meleeWeaponKey: 'weapon.schoolbag',
         throwWeaponKey: 'weapon.tutorialNotes',
-        skillId: 'tutorial-boost',
+        skillIds: ['tutorial-boost'],
         stats: BASE_STATS,
         playable: false,
     },
     {
         id: 'elderly',
         nameKey: 'character.elderly.name',
+        skins: SINGLE_SKIN,
         forms: ['walk', 'elderly-fare'],
         meleeWeaponKey: 'weapon.walkingStick',
         throwWeaponKey: 'weapon.thermosFlask',
-        skillId: 'elderly-priority',
+        skillIds: ['elderly-priority'],
         stats: ELDERLY_STATS,
         playable: false,
     },
