@@ -57,6 +57,39 @@
 >
 > 五個主角覆蓋：外賣仔（基層打工）、打工仔 / OL（中產職場，一男一女）、學生（下一代）、老人家（上一代），即係「一個香港家庭三代人 + 送外賣嗰個」。老人家嘅天敵：搶關愛座嘅後生、醫院排隊籌號機、電子支付（唔識用）、騙徒電話。
 
+## 美術參考（Art Direction References）
+
+> 只作 mood / 構圖 / 色彩參考，唔可以直接用參考作品做素材，AI prompt 亦唔好指名畫師。
+
+### 參考 1：浮島等角地圖（Pinterest 手機遊戲地圖、Nyandemo Quest）
+
+- 用途：overworld 整體構圖（浮喺雲上嘅香港、路線連接節點）。
+- 注意：顏色太「手遊」，飽和度要降低先配到懷舊主題。
+
+### 參考 2：香港粵語插畫（@drawmud 畫嘜，等角迷你 diorama）
+
+用戶 2026-10-15 提供。抽取嘅風格 token：
+
+| Token           | 描述                                      | 應用                                                 |
+| --------------- | ----------------------------------------- | ---------------------------------------------------- |
+| Diorama 節點    | 一個街角 / 一幢唐樓切開做細島，底部露截面 | Overworld 每關一個 diorama 節點                      |
+| 樓頂巨型物件    | 糖水舖頂放一大碗湯丸                      | 節點頂放該關代表食物 / boss                          |
+| 色彩規則        | 灰白混凝土底 + 紅 / 綠 / 藍高飽和點綴     | 背景低飽和，可互動物件高飽和                         |
+| 水彩紙紋理      | 紙質底、手繪邊                            | UI、overworld、對話框；同 16-bit CRT 形成對比        |
+| 書法大字 + 粵拼 | 「聖誕快樂 sing3 daan3 faai3 lok6」       | 關卡標題卡「旺角 wong6 gok3」；i18n 預留 jyutping 欄 |
+| 牆身手寫標語    | 「加油」「我想和你食湯丸」                | 關卡背景塗鴉 / 招牌放港式金句                        |
+| 微型人物比例    | 人細景大                                  | Overworld 用；關卡內 Q 版角色要大                    |
+
+### AI style prompt 草稿（M5 定稿）
+
+```
+isometric miniature diorama of a Hong Kong street corner, cut-away base,
+muted grey concrete and white walls, selective high-saturation accents
+(red minibus, green mailbox, blue road sign), watercolor paper texture,
+hand-drawn ink outlines, soft shadows, tiny chibi figures, nostalgic 1990s
+Hong Kong signage with handwritten Cantonese slogans, clean background
+```
+
 ## 關卡草案
 
 | 關  | 地區                  | 形態 / 載具      | Boss                       | 舖頭 / 場景                             | 懷舊切換位例子        |
