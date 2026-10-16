@@ -52,6 +52,7 @@ export const LEVELS: readonly LevelConfig[] = [
         mapKey: 'to-tsuenwan',
         task: 'deliver',
         bossId: 'taxi-dog',
+        deliverToCharacterId: 'student',
     },
     {
         id: 'from-tsuenwan',
@@ -59,6 +60,7 @@ export const LEVELS: readonly LevelConfig[] = [
         nameKey: 'level.fromTsuenWan.name',
         mapKey: 'from-tsuenwan',
         task: 'pickup',
+        bossId: 'dai-pai-dong-chef',
     },
     {
         id: 'lionrock-choihung',
@@ -66,6 +68,7 @@ export const LEVELS: readonly LevelConfig[] = [
         nameKey: 'level.lionRockChoiHung.name',
         mapKey: 'lionrock-choihung',
         task: 'deliver',
+        bossId: 'demolition-hammer',
         deliverToCharacterId: 'elderly',
     },
 ];
