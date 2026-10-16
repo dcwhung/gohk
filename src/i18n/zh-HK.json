@@ -6,9 +6,6 @@
     "character.deliveryBoy.name": "外賣仔",
     "weapon.foodTray": "鐵食物盤",
     "weapon.pineappleBun": "菠蘿包",
-    "level.mongkok.name": "旺角街市",
-    "level.tsimshatsui.name": "尖沙咀鐘樓",
-    "level.central.name": "中環叮叮",
     "character.officeWorker.name": "打工仔",
     "character.student.name": "小學雞",
     "character.comingSoon": "整緊，等陣先",
@@ -26,6 +23,10 @@
     "weapon.walkingStick": "拐杖",
     "weapon.thermosFlask": "保溫壺",
     "skill.elderlyPriority": "長者優先",
-    "level.peakLionRock.name": "山頂・獅子山",
-    "level.wongTaiSinChoiHung.name": "黃大仙・彩虹邨"
+    "level.mongkokJordan.name": "旺角・油麻地・佐敦",
+    "level.tsimshatsuiCentral.name": "尖沙咀・小輪・中環",
+    "level.centralCausewayBay.name": "中環・灣仔・銅鑼灣",
+    "level.toTsuenWan.name": "去荃灣",
+    "level.fromTsuenWan.name": "荃灣出發",
+    "level.lionRockChoiHung.name": "獅子山・黃大仙・彩虹邨"
 }

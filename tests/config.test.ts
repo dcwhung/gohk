@@ -84,17 +84,26 @@ describe('character roster', () => {
         }
     });
 
-    it('points every level story owner at a real character', () => {
+    it('points every deliver-to target at a real character', () => {
         for (const level of LEVELS) {
-            if (level.storyOwnerId) {
-                expect(getCharacterById(level.storyOwnerId), level.id).toBeDefined();
+            if (level.deliverToCharacterId) {
+                expect(getCharacterById(level.deliverToCharacterId), level.id).toBeDefined();
             }
         }
     });
 
-    it('gives every non-delivery character exactly one owned level', () => {
-        const owners = LEVELS.map((level) => level.storyOwnerId).filter(Boolean);
-        expect(new Set(owners).size).toBe(owners.length);
-        expect(owners.length).toBe(CHARACTERS.length);
+    it('alternates pickup and deliver tasks starting with pickup', () => {
+        LEVELS.forEach((level, index) => {
+            const expected = index % 2 === 0 ? 'pickup' : 'deliver';
+            expect(level.task, level.id).toBe(expected);
+        });
+    });
+
+    it('only deliver levels have a deliver-to target', () => {
+        for (const level of LEVELS) {
+            if (level.task === 'pickup') {
+                expect(level.deliverToCharacterId, level.id).toBeUndefined();
+            }
+        }
     });
 });
